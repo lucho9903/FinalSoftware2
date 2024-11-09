@@ -1,0 +1,5 @@
+package co.edu.uco.deviuco.usuarios.application.usecase.afiliado.impl;
+
+public interface RegisterNewAfiliado extends UseCaseWhitOutReturn<AfiliadoDomain>{
+
+}

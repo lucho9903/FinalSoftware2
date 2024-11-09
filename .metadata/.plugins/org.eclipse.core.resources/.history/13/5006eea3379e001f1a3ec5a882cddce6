@@ -1,0 +1,70 @@
+package co.edu.uco.deviuco.usuarios.application.primaryports.dto;
+
+import java.util.UUID;
+
+import co.edu.uco.deviuco.usuarios.crosscutting.helpers.TextHelper;
+public class RegisterNewAfiliadoDTO {
+
+    private String numeroIdAfiliado;
+    private String nombre;
+    private String correo;
+    private String telefono;
+    private UUID tipoIdentificacionId;
+
+    public RegisterNewAfiliadoDTO (final String cityName, final String numeroIdAfiliado,final  String nombre,
+    		final String correo,final  String telefono, final UUID tipoIdentificacionId) {
+    	
+		
+	}
+    public static RegisterNewAfiliadoDTO  create(final String cityName, final String numeroIdAfiliado,final  String nombre,
+    		final String correo,final  String telefono, final UUID tipoIdentificacionId) {
+    	return new RegisterNewCityDTO(id, numeroIdAfiliado, nombre,correo, telefono, tipoIdentificacionId);
+	}
+    
+    public final String getNumeroIdAfiliado() {
+        return numeroIdAfiliado;
+    }
+    
+    public final AfiliadoDTO setNumeroIdAfiliado(final String numeroIdAfiliado) {
+        this.numeroIdAfiliado = TextHelper.applyTrim(numeroIdAfiliado);
+        return this;
+    }
+    
+    public final String getNombre() {
+        return nombre;
+    }
+    
+    public final AfiliadoDTO setNombre(final String nombre) {
+        this.nombre = TextHelper.applyTrim(nombre);
+        return this;
+    }
+    
+    public final String getCorreo() {
+        return correo;
+    }
+    
+    public final AfiliadoDTO setCorreo(final String correo) {
+        this.correo = TextHelper.applyTrim(correo);
+        return this;
+    }
+    
+    public final String getTelefono() {
+        return telefono;
+    }
+    
+    public final AfiliadoDTO setTelefono(final String telefono) {
+        this.telefono = TextHelper.applyTrim(telefono);
+        return this;
+    }
+
+    public UUID getTipoIdentificacion() {
+        return tipoIdentificacion;
+    }
+
+    public final AfiliadoDTO setTipoIdentificacion(TipoIdentificacionDTO tipoIdentificacion) {
+        this.tipoIdentificacion = ObjectHelper.getObjectHelper().getDefaultValue(tipoIdentificacion, new TipoIdentificacionDTO());
+        return this;
+    }
+
+    
+}
